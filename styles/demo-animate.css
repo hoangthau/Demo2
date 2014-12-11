@@ -1,0 +1,35 @@
+.animate-fade.ng-enter {
+  -webkit-animation: fade 1s;
+  -moz-animation: fade 1s;
+  -o-animation: fade 1s;
+  -ms-animation: fade 1s;
+  animation: fade 1s;
+}
+.animate-fade.ng-leave {
+  -webkit-animation: fade 1s;
+  -moz-animation: fade 1s;
+  -o-animation: fade 1s;
+  -ms-animation: fade 1s;
+  animation: fade 1s;
+}
+.animate-swing.ng-enter {
+  -webkit-animation: swing 1s;
+  -moz-animation: swing 1s;
+  -o-animation: swing 1s;
+  -ms-animation: swing 1s;
+  animation: swing 1s;
+}
+.animate-swing.ng-leave {
+  -webkit-animation: swing 1s;
+  -moz-animation: swing 1s;
+  -o-animation: swing 1s;
+  -ms-animation: swing 1s;
+  animation: swing 1s;
+}
+.animate-bounceInUp.ng-enter {
+  -webkit-animation: bounceInUp 1s;
+  -moz-animation: bounceInUp 1s;
+  -o-animation: bounceInUp 1s;
+  -ms-animation: bounceInUp 1s;
+  animation: bounceInUp 1s;
+}

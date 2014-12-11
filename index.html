@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html ng-app="DemoApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Demo</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/bootstrap.css">
+
+  <link rel="stylesheet" href="libs/animate.css">
+  <link rel="stylesheet" href="styles/demo-animate.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+</head>
+<body ng-controller="Demo as demo">
+<header>
+  <div class="header-wrapper">
+    <img src="imgs/angular.png" width="auto" height="40px">
+    <span class="text">Demo Everything</span>
+  </div>
+</header>
+<div class="content-wrapper">
+  <div class="main-content">
+    <h3>jsPDF</h3>
+    <hr/>
+    <div id="customers">
+      <table class="table">
+        <thead>
+        <tr class='warning'>
+          <th>Country</th>
+          <th>Population</th>
+          <th>Date</th>
+          <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Chinna</td>
+          <td>1,363,480,000</td>
+          <td>March 24, 2014</td>
+          <td>19.1</td>
+        </tr>
+        <tr>
+          <td>India</td>
+          <td>1,241,900,000</td>
+          <td>March 24, 2014</td>
+          <td>17.4</td>
+        </tr>
+        <tr>
+          <td>United States</td>
+          <td>317,746,000</td>
+          <td>March 24, 2014</td>
+          <td>4.44</td>
+        </tr>
+        <tr>
+          <td>Indonesia</td>
+          <td>249,866,000</td>
+          <td>July 1, 2013</td>
+          <td>3.49</td>
+        </tr>
+        <tr>
+          <td>Brazil</td>
+          <td>201,032,714</td>
+          <td>July 1, 2013</td>
+          <td>2.81</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="btn btn-primary" ng-click="demo.table2PDF()">Download</button>
+
+    <h3>pdfmake</h3>
+    <hr/>
+    <button class="btn btn-primary" ng-click="demo.table2PDF2()">Download</button>
+
+    <h3>ngAnimate with animate.css</h3>
+    <hr/>
+    Reference:
+    <a href="https://docs.angularjs.org/api/ngAnimate">ngAnimate</a>
+    <a href="http://daneden.github.io/animate.css">animate.css</a>
+    <h4>ngRepeat, ngIf, ngShow(ngHide), ngInclude, ngSwitch, ngView: enter, leave</h4>
+    <button ng-click="demo.add()">Add More Patrick</button>
+    <button ng-click="demo.remove()">Remove Patrick</button>
+
+    <div>
+      <input class="form-control" ng-model="demo.search" style="width: 30%; margin-top: 10px; margin-bottom: 10px;"/>
+      <ul class="list-group">
+        <li ng-repeat="item in demo.items | filter:demo.search" class="animate-bounceInUp list-group-item clearfix">
+          <img src="imgs/pic1.jpg" width="100" height="100" class="img-circle" style="float: left;margin-right: 20px">
+          <h3 style="color: #19B5FE; font-weight: 700;">{{item.name}}</h3>
+          <p>From my experience with Angular, several talks and working in teams, here's my opinionated styleguide for syntax, building and structuring Angular applications.</p>
+        </li>
+      </ul>
+    </div>
+
+    <h3>JQueryUI sortable</h3>
+    <hr/>
+    <ul class="list-group" id="sortable1">
+      <li ng-repeat="item in demo.items | filter:demo.search" class="animate-bounceInUp list-group-item clearfix">
+        <img src="imgs/mario-icon.png" width="100" height="100" class="img-circle" style="float: left;margin-right: 20px">
+        <h3 style="color: #19B5FE; font-weight: 700;">{{item.name}}</h3>
+        <p>From my experience with Angular, several talks and working in teams, here's my opinionated styleguide for syntax, building and structuring Angular applications.</p>
+      </li>
+    </ul>
+
+    <!--<h3>Animation CSS3</h3>-->
+    <!--<hr/>-->
+    <!--<div class="parent">-->
+      <!--<div class="animation-primer"></div>-->
+    <!--</div>-->
+
+    <h3>Round Number</h3>
+    <hr/>
+    <div>Original Number: {{demo.oriNumber}}</div>
+    <div>Rounded Number: {{demo.rodNumber}}</div>
+
+
+  </div>
+</div>
+
+<script src="libs/angular.js"></script>
+<script src="libs/angular-animate.js"></script>
+<script src="libs/jquery-1.11.1.min.js"></script>
+<script src="libs/jquery-ui.js"></script>
+
+<script src="libs/jspdf.js"></script>
+<script src="libs/jspdf.debug.js"></script>
+<script src="libs/FileSaver.js"></script>
+
+<script src="libs/pdfmake.min.js"></script>
+<script src="libs/vfs_fonts.js"></script>
+
+<script src="js/main.js"></script>
+
+<script src="js/directive.js"></script>
+
+<script>
+  $(function() {
+    $( "#sortable1" ).sortable({
+      cursor: "move"
+    }).disableSelection();
+  });
+</script>
+
+
+
+</body>
+</html>
